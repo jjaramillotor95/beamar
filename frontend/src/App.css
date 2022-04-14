@@ -1,0 +1,144 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #fff;
+  min-height: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  padding: 20px;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.createEmpleado .btn-primary {
+  color: #fff;
+  background-color: #66a2ff;
+  border-color: #66a2ff;
+  border: 2px;
+  border-radius: 20px;
+  padding: 6px 40px 6px 40px;
+}
+
+.createEmpleado {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 90%;
+  bottom: 49px;
+}
+
+
+.App-header a{
+ text-decoration: none;
+ color: #66a2ff;
+}
+
+.form-control {
+  border: 1.5px solid #66a2ff!important;
+  border-radius: 20px!important;
+}
+
+.infoEmpleado .btn-primary {
+  color: #fff;
+  background-color: #66a2ff;
+  border-color: #66a2ff;
+  border: 2px;
+  border-radius: 20px;
+  padding: 6px 40px 6px 40px;
+}
+
+.infoEmpleado .btn-light {
+  color: #fff;
+  background-color: #bec2c9;
+  border-color: #bec2c9;
+  border: 2px;
+  border-radius: 20px;
+  padding: 6px 40px 6px 40px;
+}
+
+.empleado{
+  text-align: center;
+}
+
+.empleado span{
+  color: #000;
+  font-weight: 600;
+  padding: 0 20px;
+
+}
+
+.empleado h3 {
+ color: #66a2ff;
+}
+
+.empleado .btn-primary {
+  color: #fff;
+  background-color: #66a2ff;
+  border-color: #66a2ff;
+  border: 2px;
+  border-radius: 20px;
+  padding: 6px 40px 6px 40px;
+}
+.empleado i {
+  padding:40px  0px ;
+  color: #1cdb0f;
+  font-size: 100px;
+}
+
+.empleado .finalizar {
+  padding:10px  0px ;
+
+}
+
+.empleado .cancelar {
+  padding:10px  0px ;
+
+}
+
+.modal-content {
+  border-radius: 55px!important;
+}
+
+.modal {
+  top: 25%!important;
+}
+
+
+.cantratoacciones i {
+  margin: 30px;
+  font-size: 30px;
+  color: #66a2ff;
+}
+
+.cantratoacciones p {
+  color: #66a2ff;
+}
