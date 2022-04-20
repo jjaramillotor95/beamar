@@ -23,26 +23,28 @@ const CompShowContratos = () => {
 
 	const [contratos,setContratos]= useState('')
 
-	
-
-	useEffect ( () => {
-		getEmpleadoById()
-		getContratoById()
-	})
-
 	const getEmpleadoById = async () =>{
 		const res =  await axios.get(URIE+idempleado.id)
 		setNombres(res.data.nombres)
 		setNumeroEmpleado(res.data.numeroEmpleado)
 		setApellidos(res.data.apellidos)
 
-	
+
 	}
 
 	const getContratoById = async () =>{
 		const res =  await axios.get(URI+idempleado.id)
 		setContratos(res.data)
 	}
+
+	
+
+	useEffect ( () => {
+		getEmpleadoById()
+		getContratoById()
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	},[])
+
 
 	const año = new Date().getFullYear().toString().substr()
 	const mes = new Date().getMonth() + 1
@@ -74,47 +76,47 @@ const CompShowContratos = () => {
 	];
 
 	return(
-		<div>
-		<header className="App-header" >
-		<Link to={'/'}><i className="fa-solid fa-arrow-left"></i> Contratos empleado</Link>
-		</header>
-		<div className="container">
-		<div className="row">
-		<div className="col-md-12">
-		<h3> {nombres}  {apellidos}	</h3>
-		</div>
-		<div className="col-md-12">
-		<span>(Numero: {numeroEmpleado})</span>
-		</div>
-		<br/>
+	<div>
+	<header className="App-header" >
+	<Link to={'/'}><i className="fa-solid fa-arrow-left"></i> Contratos empleado</Link>
+	</header>
+	<div className="container">
+	<div className="row">
+	<div className="col-md-12">
+	<h3> {nombres}  {apellidos}	</h3>
+	</div>
+	<div className="col-md-12">
+	<span>(Numero: {numeroEmpleado})</span>
+	</div>
+	<br/>
 
-{/*		<div className="col-md-4 cantratoacciones">
-		<i className="fa-solid fa-arrows-rotate"></i><p>Renovar</p>
-		</div>*/}
+	{/*		<div className="col-md-4 cantratoacciones">
+	<i className="fa-solid fa-arrows-rotate"></i><p>Renovar</p>
+</div>*/}
 
-		<div className="col-md-6 cantratoacciones">
-		<Link to={`/crear-contrato/${idempleado.id}/`}>
-		<i className="fa-solid fa-pen-to-square"></i><p>Crear contrato</p>
-		</Link>
-		</div>
+<div className="col-md-6 cantratoacciones">
+<Link to={`/crear-contrato/${idempleado.id}/`}>
+<i className="fa-solid fa-pen-to-square"></i><p>Crear contrato</p>
+</Link>
+</div>
 
-		<div className="col-md-6 cantratoacciones">
-		<Link to={'/'}>	<i className="fa-solid fa-xmark"></i><p>Finalizar</p></Link>
-		</div>
+<div className="col-md-6 cantratoacciones">
+<Link to={'/'}>	<i className="fa-solid fa-xmark"></i><p>Finalizar</p></Link>
+</div>
 
 
-		<div className="col-md-12">
-		<DataTable
-		columns={columns}
-		data={contratos}
-		pagination
-		/>
-		</div>
+<div className="col-md-12">
+<DataTable
+columns={columns}
+data={contratos}
+pagination
+/>
+</div>
 
-		</div>
-		</div>
-		</div>
-		)
+</div>
+</div>
+</div>
+)
 }
 
 export default CompShowContratos

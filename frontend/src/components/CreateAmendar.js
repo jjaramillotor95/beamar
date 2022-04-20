@@ -26,7 +26,7 @@ const CompCreateAmendarContrato = () => {
 
 
 
-	const [fechaFinal, setFechaFinal] = useState('')
+	const [fechaFinal, setFechaFinal] = useState([])
 
 	const [sueldo, setSueldo] = useState('')
 
@@ -42,13 +42,13 @@ const CompCreateAmendarContrato = () => {
 	const [subtipoCotizante, setSubtipoCotizante] = useState('')
 	const [tipoCotizante, setTipoCotizante] = useState('')
 
-	const [nombres, setNombres] = useState('')
-	const [apellidos, setApellidos] = useState('')
-	const [documento, setDocumento] = useState('')
+	const [nombres, setNombres] = useState([])
+	const [apellidos, setApellidos] = useState([])
+	const [documento, setDocumento] = useState([])
 
-	const [numeroEmpleado, setNumeroEmpleado] = useState('')
+	const [numeroEmpleado, setNumeroEmpleado] = useState([])
 
-	const [numeroContrato, setNumeroContrato] = useState('')
+	const [numeroContrato, setNumeroContrato] = useState([])
 	const [titulo, setTitulo] = useState('')
 
 
@@ -76,8 +76,8 @@ const CompCreateAmendarContrato = () => {
 	useEffect ( () => {
 		getEmpleadoById()
 		getContratoById()
-
-	})
+// eslint-disable-next-line react-hooks/exhaustive-deps
+	},[])
 
 
 	const getEmpleadoById = async () =>{

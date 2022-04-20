@@ -56,7 +56,7 @@ const CompUpdateContrato = () => {
 
 		e.preventDefault()
 
-	    await axios.put(URI+idempleado.id, {
+	     axios.put(URI+idempleado.id, {
 
 			fechaInicio:fechaInicio,
 			fechaFinal:fechaFinal,
@@ -79,7 +79,8 @@ const CompUpdateContrato = () => {
 	useEffect ( () => {
 		getContratoById()
 		getAmandarById()
-	})
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	},[])
 
 
 	const getContratoById = async () =>{
@@ -103,11 +104,6 @@ const CompUpdateContrato = () => {
 		setTipoCotizante(res.data.tipoCotizante)
 
 		setId(res.data.idempleado)
-
-
-		
-
-
 	}
 
 

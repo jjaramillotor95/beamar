@@ -70,7 +70,8 @@ const CompUpdateEmpleado = () => {
 
 	useEffect ( () => {
 		getEmpleadoById()
-	})
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+	},[])
 
 	const getEmpleadoById = async () =>{
 		const res =  await axios.get(URI+idempleado.id)
