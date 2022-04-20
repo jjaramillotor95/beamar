@@ -79,6 +79,7 @@ const CompCreateAmendarContrato = () => {
 
 	})
 
+
 	const getEmpleadoById = async () =>{
 		const res =  await axios.get(URIE+idempleado.id)
 		setNombres(res.data.nombres)
