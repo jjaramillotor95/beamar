@@ -56,7 +56,7 @@ const CompUpdateContrato = () => {
 
 		e.preventDefault()
 
-		const res =  await axios.put(URI+idempleado.id, {
+	    await axios.put(URI+idempleado.id, {
 
 			fechaInicio:fechaInicio,
 			fechaFinal:fechaFinal,
@@ -79,7 +79,8 @@ const CompUpdateContrato = () => {
 	useEffect ( () => {
 		getContratoById()
 		getAmandarById()
-	},[])
+	})
+
 
 	const getContratoById = async () =>{
 		const res =  await axios.get(URI+idempleado.id)

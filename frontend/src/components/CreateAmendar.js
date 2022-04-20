@@ -5,11 +5,10 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Modal from 'react-bootstrap/Modal'
 import { useParams } from 'react-router-dom'
-import DataTable from 'react-data-table-component'
+
 
 
 const URIC = 'http://localhost:8000/empleados/contrato/'
-const URI = 'http://localhost:8000/empleados/contratos/'
 
 const URIA = 'http://localhost:8000/empleados/contrato/amendar/'
 
@@ -26,9 +25,7 @@ const CompCreateAmendarContrato = () => {
 	const idempleado = useParams()
 
 
-	const [contrato, setContrato] = useState('')
 
-	const [fechaInicio, setFechaInicio] = useState('')
 	const [fechaFinal, setFechaFinal] = useState('')
 
 	const [sueldo, setSueldo] = useState('')
@@ -40,8 +37,6 @@ const CompCreateAmendarContrato = () => {
 	const [dirOfc, setDirofc] = useState('')
 	const [ciudadOfc, setCiudadOfc] = useState('')
 
-	const [cargo, setCargo] = useState('')
-
 
 	const [grupoNomina, setGrupoNomina] = useState('')
 	const [subtipoCotizante, setSubtipoCotizante] = useState('')
@@ -49,22 +44,19 @@ const CompCreateAmendarContrato = () => {
 
 	const [nombres, setNombres] = useState('')
 	const [apellidos, setApellidos] = useState('')
-	const [tipoDoc, setTipoDoc] = useState('')
 	const [documento, setDocumento] = useState('')
-	const [direccion, setDireccion] = useState('')
+
 	const [numeroEmpleado, setNumeroEmpleado] = useState('')
 
 	const [numeroContrato, setNumeroContrato] = useState('')
 	const [titulo, setTitulo] = useState('')
-
-	const [amendar, setAmendar] = useState('')
 
 
 	const storeContrato = async (e) =>{
 
 		e.preventDefault()
 
-		const res =  await axios.post(URIA, {
+		 await axios.post(URIA, {
 			titulo:titulo,
 			sueldo:sueldo,
 			tipoSueldo:tipoSueldo,
@@ -85,20 +77,18 @@ const CompCreateAmendarContrato = () => {
 		getEmpleadoById()
 		getContratoById()
 
-	},[])
+	})
 
 	const getEmpleadoById = async () =>{
 		const res =  await axios.get(URIE+idempleado.id)
 		setNombres(res.data.nombres)
 		setNumeroEmpleado(res.data.numeroEmpleado)
 		setApellidos(res.data.apellidos)
-		setTipoDoc(res.data.tipoDoc)
 		setDocumento(res.data.documento)
 	}
 
 	const getContratoById = async () =>{
 		const res =  await axios.get(URIC+idempleado.contrato)
-		setFechaInicio(res.data.fechaInicio)
 		setFechaFinal(res.data.fechaFinal)
 		setNumeroContrato(res.data.numeroContrato)
 

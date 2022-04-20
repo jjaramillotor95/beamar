@@ -7,11 +7,9 @@ import swal from 'sweetalert'
 
 const URI = 'http://localhost:8000/empleados/'
 
-const cancelCourse = () => { 
-	document.getElementById("create-form").reset();
-}
 
 const CompCreateEmpleado = () => {
+
 
 
 	const [show, setShow] = useState(false);
@@ -65,7 +63,7 @@ const store = async (e) =>{
 
 
 
-	if (nombres =="" && apellidos == "" && tipoDoc == '' && documento == '' && celular == '' && direccion == '' && ciudad == '' && direccion == '' && idmetodoPago == '' && idsalud == '' && idpension == '' &&  idcajaCompensacion == '' && idcensantias == '' && datosPago == '') {
+	if (nombres === "" && apellidos === "" && tipoDoc === '' && documento === '' && celular === '' && direccion === '' && ciudad === '' && direccion === '' && idmetodoPago === '' && idsalud === '' && idpension === '' &&  idcajaCompensacion === '' && idcensantias === '' && datosPago === '') {
 
 		swal({
 			title: "Todos los campos son oblicatorios",
@@ -78,7 +76,7 @@ const store = async (e) =>{
 	}
 
 
-	if (tipoDoc == '') {
+	if (tipoDoc === '') {
 
 		swal({
 			title: "Todos los campos son oblicatorios",
@@ -91,7 +89,7 @@ const store = async (e) =>{
 	}
 
 
-	if (documento == '') {
+	if (documento === '') {
 
 		swal({
 			title: "Todos los campos son oblicatorios",
@@ -103,32 +101,7 @@ const store = async (e) =>{
 
 	}
 
-	if (celular == '') {
-
-		swal({
-			title: "Todos los campos son oblicatorios",
-			text: "Aceptar!",
-			icon: "error",
-		});
-		return false;
-
-
-	}
-
-
-	if (direccion == '') {
-
-		swal({
-			title: "Todos los campos son oblicatorios",
-			text: "Aceptar!",
-			icon: "error",
-		});
-		return false;
-
-
-	}
-
-	if ( idmetodoPago == '') {
+	if (celular === '') {
 
 		swal({
 			title: "Todos los campos son oblicatorios",
@@ -141,7 +114,32 @@ const store = async (e) =>{
 	}
 
 
-	if ( idsalud == '' ) {
+	if (direccion === '') {
+
+		swal({
+			title: "Todos los campos son oblicatorios",
+			text: "Aceptar!",
+			icon: "error",
+		});
+		return false;
+
+
+	}
+
+	if ( idmetodoPago === '') {
+
+		swal({
+			title: "Todos los campos son oblicatorios",
+			text: "Aceptar!",
+			icon: "error",
+		});
+		return false;
+
+
+	}
+
+
+	if ( idsalud === '' ) {
 
 		swal({
 			title: "Todos los campos son oblicatorios",
@@ -155,7 +153,7 @@ const store = async (e) =>{
 
 
 
-	if ( idcajaCompensacion == '' && idcensantias == '' && datosPago == '') {
+	if ( idcajaCompensacion === '' && idcensantias === '' && datosPago === '') {
 
 		swal({
 			title: "Todos los campos son oblicatorios",
@@ -167,7 +165,7 @@ const store = async (e) =>{
 
 	}
 
-	if (idcensantias == '' && datosPago == '') {
+	if (idcensantias === '' && datosPago === '') {
 
 		swal({
 			title: "Todos los campos son oblicatorios",
@@ -205,7 +203,7 @@ const store = async (e) =>{
 		datosPago: datosPago,
 	})
 	setIdempledo(res.data.id)
-	if(res.data.type == 200){
+	if(res.data.type === 200){
 		handleShow()
 	}
 }

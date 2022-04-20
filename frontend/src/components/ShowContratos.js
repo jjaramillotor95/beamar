@@ -1,32 +1,24 @@
 import axios from 'axios'
 import { useState,useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import Modal from 'react-bootstrap/Modal'
-import { useParams } from 'react-router-dom'
+import { useParams, Link} from 'react-router-dom'
 import DataTable from 'react-data-table-component'
+
 
 const URI = 'http://localhost:8000/empleados/contratos/'
 const URIE = 'http://localhost:8000/empleados/'
 
 
-const cancelCourse = () => { 
-	document.getElementById("create-form").reset();
-}
-
 const CompShowContratos = () => {
 
 	const idempleado = useParams()
 
-	const [show, setShow] = useState(false);
-	const handleClose = () => setShow(false);
-	const handleShow = () => setShow(true);
+
 
 
 	const [nombres, setNombres] = useState('')
 	const [apellidos, setApellidos] = useState('')
-	const [tipoDoc, setTipoDoc] = useState('')
-	const [documento, setDocumento] = useState('')
-	const [direccion, setDireccion] = useState('')
+
+
 	const [numeroEmpleado, setNumeroEmpleado] = useState('')
 
 	const [contratos,setContratos]= useState('')
@@ -36,15 +28,15 @@ const CompShowContratos = () => {
 	useEffect ( () => {
 		getEmpleadoById()
 		getContratoById()
-	},[])
+	})
 
 	const getEmpleadoById = async () =>{
 		const res =  await axios.get(URIE+idempleado.id)
 		setNombres(res.data.nombres)
 		setNumeroEmpleado(res.data.numeroEmpleado)
 		setApellidos(res.data.apellidos)
-		setTipoDoc(res.data.tipoDoc)
-		setDocumento(res.data.documento)
+
+	
 	}
 
 	const getContratoById = async () =>{

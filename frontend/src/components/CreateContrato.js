@@ -54,7 +54,7 @@ const CompCreateContrato = () => {
 
 		e.preventDefault()
 
-		if (fechaInicio =='' && fechaFinal == '' && sueldo == '' && tipoSueldo == '') {
+		if (fechaInicio ==='' && fechaFinal === '' && sueldo === '' && tipoSueldo === '') {
 
 			swal({
 				title: "Todos los campos son oblicatorios",
@@ -68,7 +68,7 @@ const CompCreateContrato = () => {
 
 		}
 
-		if (reteFuente == '' && dirOfc == '' && ciudadOfc == '' && cargo == '' && grupoNomina == '' && subtipoCotizante == '' && contrato == '' && tipoCotizante == '') {
+		if (reteFuente === '' && dirOfc === '' && ciudadOfc === '' && cargo === '' && grupoNomina === '' && subtipoCotizante === '' && contrato === '' && tipoCotizante === '') {
 
 			swal({
 				title: "Todos los campos son oblicatorios",
@@ -81,8 +81,7 @@ const CompCreateContrato = () => {
 		}
 
 		
-
-		const res =  await axios.post(URIC, {
+		await axios.post(URIC, {
 			idempleado:idempleado.id,
 			numeroContrato:numeroContrato,
 			fechaInicio:fechaInicio,

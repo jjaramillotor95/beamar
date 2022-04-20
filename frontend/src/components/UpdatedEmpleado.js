@@ -6,10 +6,6 @@ import { useParams } from 'react-router-dom'
 
 const URI = 'http://localhost:8000/empleados/'
 
-const cancelCourse = () => { 
-	document.getElementById("create-form").reset();
-}
-
 const CompUpdateEmpleado = () => {
 
 	const idempleado = useParams()
@@ -66,7 +62,7 @@ const CompUpdateEmpleado = () => {
 			datosPago: datosPago,
 		})
 
-		if(res.data.type == 200){
+		if(res.data.type === 200){
 			handleShow()
 			getEmpleadoById()
 		}
@@ -74,7 +70,7 @@ const CompUpdateEmpleado = () => {
 
 	useEffect ( () => {
 		getEmpleadoById()
-	},[])
+	})
 
 	const getEmpleadoById = async () =>{
 		const res =  await axios.get(URI+idempleado.id)
